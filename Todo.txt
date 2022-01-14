@@ -1,0 +1,26 @@
+﻿#. Add SHIFT & CONTROL change increase-values on the stat-increase buttons
+#. Changable Layout Settings
+#. Animated Expanders
+
+#. Inventory
+	- Add an "Add-Button" for inventory items.
+		o Allow to drag items to sort
+			* Sort items alphabetically.
+				[] DataGrid may be needed
+	- Add "Add from Library" Items
+
+#. Add conditions, cost, and obligatory checkmark for abilities, and the (!)
+	- Look up the (!)
+		* Making the entire thing a custom control
+
+#. Paste link for image, like dicecloud
+
+#. Sub-Tabs for different settings
+
+#. Look into Stats and indicators of bonuses.
+#. Look into Debuffs/Buffs tracking.
+
+#. Save/Load Character sheets
+	- Save/Load Entire Character Libraries
+
+#. Mundie-only stuff disappears if you are an epithet user

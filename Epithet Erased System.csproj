@@ -1,0 +1,32 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <RootNamespace>Epithet_Erased_System</RootNamespace>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Assets\Icons\settings_1.png" />
+    <None Remove="Assets\Icons\settings_2.png" />
+    <None Remove="book_decoration.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Extended.Wpf.Toolkit" Version="4.2.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Assets\Icons\settings_1.png" />
+    <Resource Include="Assets\Icons\settings_2.png" />
+    <Resource Include="book_decoration.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Todo.txt">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+  </ItemGroup>
+
+</Project>
