@@ -21,7 +21,7 @@
             Foreground="{Binding GlobalForeground, RelativeSource={RelativeSource AncestorType={x:Type local:Settings_Page}}}"
             />
 
-        <xctk:ColorPicker
+        <xctk:ColorPicker x:Name="Bak"
             Width="150"
             Height="50"
             HorizontalAlignment="Right"
@@ -63,16 +63,24 @@
 
         <Label
             Content="Font Size"
-            FontSize="18"
+            FontSize="{Binding ElementName=slider, Path=Value, Mode=TwoWay}"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
             VerticalContentAlignment="Center"
             Height="50"
             Grid.Row="1"
             Grid.Column="0"
-            Foreground="{Binding GlobalForeground, RelativeSource={RelativeSource AncestorType={x:Type local:Settings_Page}}}"
             />
-        <Slider x:Name="slider" HorizontalAlignment="Left" Margin="196,50,0,0" Grid.Row="1" VerticalAlignment="Top" Width="120"/>
+        <Slider
+            x:Name="slider"
+            Height="35"
+            
+            VerticalContentAlignment="Center"
+            HorizontalAlignment="Right"
+            Margin="0,15,0,0"
+            Grid.Row="1"
+            VerticalAlignment="Top"
+            Width="150" Minimum="10" SmallChange="1" Maximum="25" Value="18" TickPlacement="Both" IsSnapToTickEnabled="True" HorizontalContentAlignment="Left" FlowDirection="LeftToRight" UseLayoutRounding="True"/>
 
         <Grid.RowDefinitions>
             <RowDefinition/>
@@ -88,6 +96,6 @@
             <ColumnDefinition/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        
+
     </Grid>
 </UserControl>

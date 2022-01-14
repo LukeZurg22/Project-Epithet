@@ -40,6 +40,8 @@ namespace Epithet_Erased_System
             set { SetValue(GlobalForegroundProperty, value); }
         }
 
+
+
         public Settings_Page()
         {
             InitializeComponent();

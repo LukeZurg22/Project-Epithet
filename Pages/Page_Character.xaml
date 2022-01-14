@@ -10,7 +10,7 @@
              >
     <ScrollViewer>
         <Grid
-        Background="{Binding GlobalBackground, RelativeSource={RelativeSource AncestorType={x:Type local:Settings_Page}}}"
+        Background="{Binding PageBackground, RelativeSource={RelativeSource AncestorType={x:Type local:CharacterSheet}}}"
         >
 
             <Grid

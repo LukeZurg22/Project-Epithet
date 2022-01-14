@@ -20,7 +20,7 @@
                        RenderOptions.BitmapScalingMode="HighQuality"
                        Stretch="Uniform" StretchDirection="Both"/>
             </TabItem.Header>
-            <local:Settings_Page/>
+            <local:Settings_Page x:Name="Settings"/>
         </TabItem>
 
         <TabItem Header="Main" IsSelected="True">

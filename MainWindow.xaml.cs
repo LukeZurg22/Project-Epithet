@@ -25,7 +25,8 @@ namespace Epithet_Erased_System
         public void TestMethod(object sender, RoutedEventArgs e)
         {
             var newTab = new TabItem();
-            newTab.Content = new CharacterSheet();
+            var sheet = new CharacterSheet();
+            newTab.Content = sheet;
             Main_Tabs.Items.Add(newTab);
         }
 

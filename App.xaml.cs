@@ -5,6 +5,7 @@ using System.Data;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Media;
 
 namespace Epithet_Erased_System
 {
@@ -13,5 +14,6 @@ namespace Epithet_Erased_System
     /// </summary>
     public partial class App : Application
     {
+
     }
 }
