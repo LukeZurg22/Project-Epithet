@@ -13,6 +13,10 @@
 	- Look up the (!)
 		* Making the entire thing a custom control
 
+#. Add color-changer for book descoration.
+
+#. Add drag & drop tabs (user convienence)
+
 #. Paste link for image, like dicecloud
 
 #. Sub-Tabs for different settings

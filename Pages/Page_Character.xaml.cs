@@ -28,8 +28,8 @@ namespace Epithet_Erased_System
         public static DependencyProperty PageBackgroundProperty = DependencyProperty.Register("PageBackground", typeof(Brush), typeof(CharacterSheet));
         public Brush PageBackground
         {
-            get { return (Brush)GetValue(PageBackgroundProperty); }
-            set { SetValue(PageBackgroundProperty, value); }
+            get { return (Brush)GetValue(Settings_Page.GlobalBackgroundProperty); }
+            set { SetValue(Settings_Page.GlobalBackgroundProperty, value); }
         }
 
         public CharacterSheet()

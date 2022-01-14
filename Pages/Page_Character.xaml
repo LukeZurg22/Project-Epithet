@@ -10,7 +10,7 @@
              >
     <ScrollViewer>
         <Grid
-        Background="{Binding PageBackground, RelativeSource={RelativeSource AncestorType={x:Type local:CharacterSheet}}}"
+        Background="{Binding GlobalBackground, RelativeSource={RelativeSource AncestorType={x:Type local:Settings_Page}}}"
         >
 
             <Grid
@@ -40,17 +40,17 @@
                     <Grid Background="White">
                         <Label Content="Ribbon Background" Grid.Row="0"/>
                         <xctk:ColorPicker
-                        Width="125"
-                        Height="25"
-                        DisplayColorAndName="True"
-                        ColorMode="ColorCanvas"
-                        SelectedColor="#00000000"
-                        ShowAvailableColors="False"
-                        SelectedColorChanged="ColorPicker_SelectedColorChanged"
-                        Name="ColorPicker"
-                        Grid.Row="0"
-                        HorizontalAlignment="Right"
-                    />
+                            Width="125"
+                            Height="25"
+                            DisplayColorAndName="True"
+                            ColorMode="ColorCanvas"
+                            SelectedColor="#00000000"
+                            ShowAvailableColors="False"
+                            SelectedColorChanged="ColorPicker_SelectedColorChanged"
+                            Name="ColorPicker"
+                            Grid.Row="0"
+                            HorizontalAlignment="Right"
+                        />
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
