@@ -20,7 +20,7 @@
   <ItemGroup>
     <Resource Include="Assets\Icons\settings_1.png" />
     <Resource Include="Assets\Icons\settings_2.png" />
-    <Resource Include="book_decoration.png" />
+    <Resource Include="Assets\Icons\book_decoration.png" />
   </ItemGroup>
 
   <ItemGroup>

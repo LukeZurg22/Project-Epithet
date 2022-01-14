@@ -75,6 +75,15 @@
                     Click="TestMethod"
                     />
 
+                <Button
+                    Content="ADD TEST SHEETS"
+                    Height="100"
+                    Width="200"
+                    Grid.Row="3"
+                    Grid.Column="1"
+                    Grid.ColumnSpan="2"
+                    Click="Test_Add_Initial_Sheets"
+                    />
 
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
@@ -92,15 +101,6 @@
             </Grid>
         </TabItem>
 
-        <TabItem Header="Sheet1">
-
-                <local:CharacterSheet PageBackground="Black"/>
-
-        </TabItem>
-
-        <TabItem Header="Sheet2">
-                <local:CharacterSheet PageBackground="Red"/>
-        </TabItem>
     </TabControl>
 
 </Window>

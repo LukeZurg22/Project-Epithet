@@ -21,34 +21,45 @@
             >
 
                 <Image
-                    Source="/book_decoration.png"
+                    Source="/Assets/Icons/book_decoration.png"
                     Width="70"
                 />
 
-                <ComboBox
+
+                <Expander
                     Margin="0,0,0,0"
                     Grid.Row="0"
                     Grid.Column="0"
-                    HorizontalAlignment="Right"
+                    HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Height="25"
-                    Width="100"
+                    Height="100"
+                    Width="250"
+                    IsExpanded="False"
                     >
+                    
+                    <Grid Background="White">
+                        <Label Content="Ribbon Background" Grid.Row="0"/>
+                        <xctk:ColorPicker
+                        Width="125"
+                        Height="25"
+                        DisplayColorAndName="True"
+                        ColorMode="ColorCanvas"
+                        SelectedColor="#00000000"
+                        ShowAvailableColors="False"
+                        SelectedColorChanged="ColorPicker_SelectedColorChanged"
+                        Name="ColorPicker"
+                        Grid.Row="0"
+                        HorizontalAlignment="Right"
+                    />
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                    </Grid>
+                </Expander>
 
 
-                </ComboBox>
-
-                <xctk:ColorPicker
-                Width="125"
-                Height="25"
-                DisplayColorAndName="True"
-                ColorMode="ColorCanvas"
-                SelectedColor="#00000000"
-                ShowAvailableColors="False"
-                SelectedColorChanged="ColorPicker_SelectedColorChanged"
-                Name="ColorPicker"
-                HorizontalAlignment="Left"
-                />
 
             </Grid>
 
