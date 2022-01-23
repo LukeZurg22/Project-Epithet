@@ -20,6 +20,12 @@
 #. Add custom sheet colors that bypass the theme (for those picky ones out there)
 #. Make every aspect of a character sheet customizable to ignore total theme.
 
+#. Decide for customizability of stat-blocks.
+
+#. Add customizability for "unused" epithet part. (WARNING, MAY BE USELESS DUE TO IT BEING HIDDEN UNTIL NEEDED)
+
+#. Add Color-Change in tabs, in settings.
+
 #. Paste link for image, like dicecloud
 
 #. Sub-Tabs for different settings
