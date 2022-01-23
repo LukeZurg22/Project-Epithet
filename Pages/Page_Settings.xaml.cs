@@ -26,22 +26,6 @@ namespace Epithet_Erased_System
         public static Brush GlobalFontFamily { get; set; }
         public static Brush GlobalFontSize { get; set; }
 
-        public static DependencyProperty GlobalBackgroundProperty = DependencyProperty.Register("GlobalBackground", typeof(Brush), typeof(Settings_Page));
-        public Brush GlobalBackground
-        {
-            get { return (Brush)GetValue(GlobalBackgroundProperty); }
-            set { SetValue(GlobalBackgroundProperty, value); }
-        }
-
-        public static DependencyProperty GlobalForegroundProperty = DependencyProperty.Register("GlobalForeground", typeof(Brush), typeof(Settings_Page));
-        public Brush GlobalForeground
-        {
-            get { return (Brush)GetValue(GlobalForegroundProperty); }
-            set { SetValue(GlobalForegroundProperty, value); }
-        }
-
-
-
         public Settings_Page()
         {
             InitializeComponent();
@@ -51,14 +35,58 @@ namespace Epithet_Erased_System
         {
             var box = (ColorPicker)sender;
             var brush = new SolidColorBrush((Color)box.SelectedColor);
-            GlobalBackground = brush;
+            GlobalProperties.GlobalBackground = brush;
         }
 
         private void Settings_Foreground_Changed(object sender, RoutedPropertyChangedEventArgs<Color?> e)
         {
             var box = (ColorPicker)sender;
             var brush = new SolidColorBrush((Color)box.SelectedColor);
-            GlobalForeground = brush;
+            GlobalProperties.GlobalForeground = brush;
         }
+
+        private void Settings_FontSize_Changed(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            var box = (Slider)sender;
+            GlobalProperties.GlobalFontSize = box.Value;
+        }
+
+        /*private void Settings_FontFamily_Changed(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        {
+            var box = (Slider)sender;
+            GlobalProperties.GlobalFontSize = box.Value;
+    }*/
+
+        private void Settings_Stat1_Stroke_Changed(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+            var box = (ColorPicker)sender;
+            var brush = new SolidColorBrush((Color)box.SelectedColor);
+            if (IsLoaded)
+            {
+
+                GlobalProperties.GlobalStat1Stroke = brush;
+
+            }
+        }
+
+        private void Settings_Stat1_Foreground_Changed(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        {
+            var box = (ColorPicker)sender;
+            var brush = new SolidColorBrush((Color)box.SelectedColor);
+            if (IsLoaded)
+            {
+
+                GlobalProperties.GlobalStat1Foreground = brush;
+            }
+        }
+
+        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            var box = (Slider)sender;
+            GlobalProperties.GlobalFontSize = box.Value;
+
+        }
+
+
     }
 }

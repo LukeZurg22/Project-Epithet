@@ -24,7 +24,8 @@
         </TabItem>
 
         <TabItem Header="Main" IsSelected="True">
-            <Grid Background="#FFE5E5E5">
+            <Grid
+                Background="{Binding Path=(local:GlobalProperties.GlobalBackground),UpdateSourceTrigger=PropertyChanged}">
                 <Button
                     Content="Load Library"
                     Height="100"

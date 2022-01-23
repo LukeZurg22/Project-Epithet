@@ -7,18 +7,19 @@
              mc:Ignorable="d" 
              d:DesignHeight="750" d:DesignWidth="650"
              >
-    <Grid Background="{Binding GlobalBackground, RelativeSource={RelativeSource AncestorType={x:Type local:Settings_Page}}}">
+    <Grid Background="{Binding Path=(local:GlobalProperties.GlobalBackground),
+        Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}">
 
         <Label
             Content="Background Color"
-            FontSize="18"
+            FontSize="{Binding Path=(local:GlobalProperties.GlobalFontSize),UpdateSourceTrigger=PropertyChanged}"
             VerticalAlignment="Top"
             HorizontalAlignment="Left"
             VerticalContentAlignment="Center"
             Height="50"
             Grid.Row="0"
             Grid.Column="0"
-            Foreground="{Binding GlobalForeground, RelativeSource={RelativeSource AncestorType={x:Type local:Settings_Page}}}"
+            Foreground="{Binding Path=(local:GlobalProperties.GlobalForeground),UpdateSourceTrigger=PropertyChanged}"
             />
 
         <xctk:ColorPicker x:Name="Bak"
@@ -37,14 +38,15 @@
 
         <Label
             Content="Foreground Color"
-            FontSize="18"
+            FontSize="{Binding Path=(local:GlobalProperties.GlobalFontSize),UpdateSourceTrigger=PropertyChanged}"
             VerticalAlignment="Bottom"
             HorizontalAlignment="Left"
             VerticalContentAlignment="Center"
             Height="50"
             Grid.Row="0"
             Grid.Column="0"
-            Foreground="{Binding GlobalForeground, RelativeSource={RelativeSource AncestorType={x:Type local:Settings_Page}}}"
+            Foreground="{Binding Path=(local:GlobalProperties.GlobalForeground),UpdateSourceTrigger=PropertyChanged}"
+
             />
 
         <xctk:ColorPicker
@@ -70,6 +72,7 @@
             Height="50"
             Grid.Row="1"
             Grid.Column="0"
+            Foreground="{Binding Path=(local:GlobalProperties.GlobalForeground),UpdateSourceTrigger=PropertyChanged}"
             />
         <Slider
             x:Name="slider"
@@ -80,7 +83,73 @@
             Margin="0,15,0,0"
             Grid.Row="1"
             VerticalAlignment="Top"
-            Width="150" Minimum="10" SmallChange="1" Maximum="25" Value="18" TickPlacement="Both" IsSnapToTickEnabled="True" HorizontalContentAlignment="Left" FlowDirection="LeftToRight" UseLayoutRounding="True"/>
+            Width="150"
+            Minimum="10"
+            SmallChange="1"
+            Maximum="25" Value="18"
+            TickPlacement="Both"
+            IsSnapToTickEnabled="True"
+            HorizontalContentAlignment="Left"
+            FlowDirection="LeftToRight"
+            UseLayoutRounding="True"
+            ValueChanged="slider_ValueChanged"
+            />
+
+
+        <Label
+            Content="Stat One Color"
+            FontSize="{Binding Path=(local:GlobalProperties.GlobalFontSize),UpdateSourceTrigger=PropertyChanged}"
+            VerticalAlignment="Top"
+            HorizontalAlignment="Left"
+            VerticalContentAlignment="Center"
+            Height="50"
+            Margin="0,-15,0,0"
+            Grid.Row="2"
+            Grid.Column="0"
+            Foreground="{Binding Path=(local:GlobalProperties.GlobalForeground),UpdateSourceTrigger=PropertyChanged}"
+            />
+
+        <Label
+            Content="Stat One Foreground"
+            FontSize="{Binding Path=(local:GlobalProperties.GlobalFontSize),UpdateSourceTrigger=PropertyChanged}"
+            VerticalAlignment="Center"
+            HorizontalAlignment="Left"
+            VerticalContentAlignment="Center"
+            Height="50"
+            Margin="0,0,0,0"
+            Grid.Row="2"
+            Grid.Column="0"
+            Foreground="{Binding Path=(local:GlobalProperties.GlobalForeground),UpdateSourceTrigger=PropertyChanged}"
+            />
+
+
+        <xctk:ColorPicker x:Name="Stat1Stroke"
+            Width="150"
+            Height="25"
+            HorizontalAlignment="Right"
+            VerticalAlignment="Top"
+            DisplayColorAndName="True"
+            ColorMode="ColorCanvas"
+            SelectedColor="Green"
+            ShowAvailableColors="False"
+            Grid.Row="2"
+            Grid.Column="0"
+            SelectedColorChanged="Settings_Stat1_Stroke_Changed"
+            />
+
+        <local:Stat
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Text="STAMINA"
+            Foreground="{Binding Path=(local:GlobalProperties.GlobalStat1Foreground), UpdateSourceTrigger=PropertyChanged}"
+            Stroke="{Binding Path=(local:GlobalProperties.GlobalStat1Stroke), UpdateSourceTrigger=PropertyChanged}"
+            Grid.Row="2"
+            Grid.RowSpan="2"
+            Grid.Column="1"
+            Height="120"
+            Margin="25,0,0,0"
+            FontFamily="Arial"
+            />
 
         <Grid.RowDefinitions>
             <RowDefinition/>

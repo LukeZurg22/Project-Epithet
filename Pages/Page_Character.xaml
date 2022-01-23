@@ -10,14 +10,16 @@
              >
     <ScrollViewer>
         <Grid
-        Background="{Binding PageBackground, RelativeSource={RelativeSource AncestorType={x:Type local:CharacterSheet}}}"
+        Background="{Binding Path=(local:GlobalProperties.GlobalBackground)}"
+        
         >
 
             <Grid
                 Name="Decor_Row_Grid"
                 Grid.Row="0"
                 Grid.ColumnSpan="3"
-                Background="{Binding Background, RelativeSource={RelativeSource AncestorType={x:Type local:CharacterSheet}}}"
+                Background="{Binding PageBackground,
+                RelativeSource={RelativeSource AncestorType={x:Type local:CharacterSheet}}}"
             >
 
                 <Image
@@ -66,7 +68,7 @@
             <Grid Name="Title_Grid"
                 Grid.Row="1"
                 Grid.ColumnSpan="3"
-                Background="{Binding PageBackground, RelativeSource={RelativeSource AncestorType={x:Type local:CharacterSheet}}}"
+                Background="{Binding Path=(local:GlobalProperties.GlobalBackground),UpdateSourceTrigger=PropertyChanged}"
                 >
 
                 <Line
@@ -86,7 +88,7 @@
                    FontSize="24"
                    Margin="0,5,0,0"    
                    
-                   Foreground="CornflowerBlue"
+                    Foreground="{Binding Path=(local:GlobalProperties.GlobalForeground),UpdateSourceTrigger=PropertyChanged}"
                    />
 
                 <Label x:Name="Sheet_Label1"
@@ -115,7 +117,8 @@
                             Height="25"
                             IsTodayHighlighted="True"
                             Margin="10,35,0,0"
-                            BorderBrush="{x:Null}"/>
+                            BorderBrush="{x:Null}"
+                            />
 
                 <TextBox x:Name="Player_Name"
                     HorizontalAlignment="Left"
@@ -126,6 +129,7 @@
                     Height="20" Width="150"
                     FontSize="14"
                     Background="{x:Null}"
+                    Foreground="{Binding Path=(local:GlobalProperties.GlobalForeground),UpdateSourceTrigger=PropertyChanged}"
                     BorderBrush="{x:Null}"
                     TextChanged="Update_Name_Margin"
                          />
@@ -144,6 +148,7 @@
                    FontFamily="Segoe UI Semibold"
                    FontSize="14"
                    Margin="10,5,0,0"    
+                   Foreground="{Binding Path=(local:GlobalProperties.GlobalForeground),UpdateSourceTrigger=PropertyChanged}"
                    />
 
                 <TextBox Name="Box_Name"
@@ -166,7 +171,9 @@
                    FontWeight="Normal"
                    FontFamily="Segoe UI Semibold"
                    FontSize="14"
-                   Margin="10,5,0,20"    
+                   Margin="10,5,0,20"
+                   Foreground="{Binding Path=(local:GlobalProperties.GlobalForeground),UpdateSourceTrigger=PropertyChanged}"
+
                    />
 
                 <TextBox Name="Box_Epithet"
@@ -182,14 +189,15 @@
                          />
 
                 <Label
-                   Content="Class:" 
-                   HorizontalAlignment="Left"
-                   VerticalAlignment="Bottom"
-                   FontWeight="Normal"
-                   FontFamily="Segoe UI Semibold"
-                   FontSize="14"
-                   Margin="10,5,0,20"    
-                   />
+                    Content="Class:" 
+                    HorizontalAlignment="Left"
+                    VerticalAlignment="Bottom"
+                    FontWeight="Normal"
+                    FontFamily="Segoe UI Semibold"
+                    FontSize="14"
+                    Margin="10,5,0,20"
+                    Foreground="{Binding Path=(local:GlobalProperties.GlobalForeground),UpdateSourceTrigger=PropertyChanged}"
+                    />
 
                 <TextBox
                    HorizontalAlignment="Left"
@@ -215,6 +223,7 @@
                 Grid.RowSpan="2"
                 Panel.ZIndex="1"
                 IsExpanded="False"
+                Foreground="{Binding Path=(local:GlobalProperties.GlobalForeground),UpdateSourceTrigger=PropertyChanged}"
             >
                 <Grid Margin="0,0,0,-20">
                     <TextBox Text=""
@@ -237,9 +246,9 @@
             <local:Stat
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
-                    Stroke="Green"
+                    Foreground="{Binding Path=(local:GlobalProperties.GlobalStat1Foreground), UpdateSourceTrigger=PropertyChanged}"
+                    Stroke="{Binding Path=(local:GlobalProperties.GlobalStat1Stroke), UpdateSourceTrigger=PropertyChanged}"
                     Text="STAMINA"
-                    Foreground="Green"
                     Grid.Row="2"
                     Grid.Column="2"
                     Height="120"

@@ -17,6 +17,9 @@
 
 #. Add drag & drop tabs (user convienence)
 
+#. Add custom sheet colors that bypass the theme (for those picky ones out there)
+#. Make every aspect of a character sheet customizable to ignore total theme.
+
 #. Paste link for image, like dicecloud
 
 #. Sub-Tabs for different settings
@@ -28,3 +31,22 @@
 	- Save/Load Entire Character Libraries
 
 #. Mundie-only stuff disappears if you are an epithet user
+
+#.
+        <TextBox
+            FontSize="{Binding Path=(local:GlobalProperties.GlobalFontSize),UpdateSourceTrigger=PropertyChanged}"
+            VerticalAlignment="Bottom"
+            HorizontalAlignment="Right"
+            VerticalContentAlignment="Center"
+            TextAlignment="Center"
+            Height="25"
+            Width="125"
+            Margin="0,0,0,5"
+            Text="STAMINA"
+            Grid.Row="2"
+            Grid.Column="0"
+            Foreground="Black"
+            TextChanged="Settings_Stat1_Stroke_Changed"
+            />
+
+

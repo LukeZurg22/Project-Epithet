@@ -18,18 +18,11 @@ namespace Epithet_Erased_System
 
     public partial class CharacterSheet : UserControl
     {
-        public static new DependencyProperty BackgroundProperty = DependencyProperty.Register("Background", typeof(Brush), typeof(CharacterSheet));
-        public new Brush Background
-        {
-            get { return (Brush)GetValue(BackgroundProperty); }
-            set { SetValue(BackgroundProperty, value); }
-        }
-
         public static DependencyProperty PageBackgroundProperty = DependencyProperty.Register("PageBackground", typeof(Brush), typeof(CharacterSheet));
         public Brush PageBackground
         {
-            get { return (Brush)GetValue(Settings_Page.GlobalBackgroundProperty); }
-            set { SetValue(Settings_Page.GlobalBackgroundProperty, value); }
+            get { return (Brush)GetValue(PageBackgroundProperty); }
+            set { SetValue(PageBackgroundProperty, value); }
         }
 
         public CharacterSheet()
@@ -49,7 +42,7 @@ namespace Epithet_Erased_System
         private void ColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
         {
             var brush = new SolidColorBrush((Color)ColorPicker.SelectedColor);
-            Background = brush;
+            PageBackground = brush;
         }
     }
 }

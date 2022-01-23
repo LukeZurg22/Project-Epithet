@@ -28,6 +28,7 @@ namespace Epithet_Erased_System
             var sheet = new CharacterSheet();
             newTab.Content = sheet;
             Main_Tabs.Items.Add(newTab);
+
         }
 
         public void Test_Add_Initial_Sheets(object sender, RoutedEventArgs e)
@@ -40,7 +41,6 @@ namespace Epithet_Erased_System
 
             var twoTag = new TabItem();
             var sheet2 = new CharacterSheet();
-            sheet2.PageBackground = Brushes.Red;
             twoTag.Header = Convert.ToString(Main_Tabs.Items.Count);
             twoTag.Content = sheet2;
             Main_Tabs.Items.Add(twoTag);

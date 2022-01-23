@@ -17,7 +17,8 @@
             FontWeight="Normal"
             FontFamily="Segoe UI Semibold"
             FontSize="14"
-            Margin="0,5,0,0"    
+            Margin="0,5,0,0"
+            Foreground="{Binding Path=(local:GlobalProperties.GlobalForeground),UpdateSourceTrigger=PropertyChanged}"
         />
         <ComboBox
             Width="145"
@@ -63,6 +64,7 @@
             FontFamily="Segoe UI Semibold"
             FontSize="14"
             Margin="0,5,0,5"
+            Foreground="{Binding Path=(local:GlobalProperties.GlobalForeground),UpdateSourceTrigger=PropertyChanged}"
         />
 
         <ComboBox
