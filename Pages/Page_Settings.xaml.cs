@@ -21,11 +21,6 @@ namespace Epithet_Erased_System
     /// </summary>
     public partial class Settings_Page : UserControl
     {
-        //public static Brush GlobalBackground { get; set; }
-        //public static Brush GlobalForeground { get; set; }
-        public static Brush GlobalFontFamily { get; set; }
-        public static Brush GlobalFontSize { get; set; }
-
         public Settings_Page()
         {
             InitializeComponent();
@@ -45,10 +40,18 @@ namespace Epithet_Erased_System
             GlobalProperties.GlobalForeground = brush;
         }
 
-        private void Settings_FontSize_Changed(object sender, RoutedPropertyChangedEventArgs<double?> e)
+        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             var box = (Slider)sender;
             GlobalProperties.GlobalFontSize = box.Value;
+
+        }
+
+        private void settingsslider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
+        {
+            var box = (Slider)sender;
+            GlobalProperties.GlobalSettingsFontSize = box.Value;
+
         }
 
         /*private void Settings_FontFamily_Changed(object sender, RoutedPropertyChangedEventArgs<double?> e)
@@ -57,36 +60,7 @@ namespace Epithet_Erased_System
             GlobalProperties.GlobalFontSize = box.Value;
     }*/
 
-        private void Settings_Stat1_Stroke_Changed(object sender, RoutedPropertyChangedEventArgs<Color?> e)
-        {
-            var box = (ColorPicker)sender;
-            var brush = new SolidColorBrush((Color)box.SelectedColor);
-            if (IsLoaded)
-            {
 
-                GlobalProperties.GlobalStat1Stroke = brush;
-
-            }
-        }
-
-        private void Settings_Stat1_Foreground_Changed(object sender, RoutedPropertyChangedEventArgs<Color?> e)
-        {
-            var box = (ColorPicker)sender;
-            var brush = new SolidColorBrush((Color)box.SelectedColor);
-            if (IsLoaded)
-            {
-
-                GlobalProperties.GlobalStat1Foreground = brush;
-            }
-        }
-
-        private void slider_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
-        {
-            var box = (Slider)sender;
-            GlobalProperties.GlobalFontSize = box.Value;
 
         }
-
-
     }
-}

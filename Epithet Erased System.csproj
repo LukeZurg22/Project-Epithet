@@ -13,6 +13,7 @@
     <None Remove="book_decoration.png" />
   </ItemGroup>
 
+
   <ItemGroup>
     <PackageReference Include="Extended.Wpf.Toolkit" Version="4.2.0" />
   </ItemGroup>

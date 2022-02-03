@@ -12,23 +12,20 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using Xceed.Wpf.Toolkit;
 
 namespace Epithet_Erased_System
 {
 
     public partial class CharacterSheet : UserControl
     {
-        public static DependencyProperty PageBackgroundProperty = DependencyProperty.Register("PageBackground", typeof(Brush), typeof(CharacterSheet));
-        public Brush PageBackground
-        {
-            get { return (Brush)GetValue(PageBackgroundProperty); }
-            set { SetValue(PageBackgroundProperty, value); }
-        }
-
         public CharacterSheet()
         {
+
             InitializeComponent();
         }
+
+
 
         private void Update_Name_Margin(object sender, TextChangedEventArgs e)
         {
@@ -37,12 +34,13 @@ namespace Epithet_Erased_System
                             Box_Name.Width = 12 + (Box_Name.Text.Length * 6);
                         }
             */
+
         }
 
-        private void ColorPicker_SelectedColorChanged(object sender, RoutedPropertyChangedEventArgs<Color?> e)
+        private void Grid_GotKeyboardFocus(object sender, MouseEventArgs e)
         {
-            var brush = new SolidColorBrush((Color)ColorPicker.SelectedColor);
-            PageBackground = brush;
+            //Settings_Control.Settings_Expander.IsExpanded = false;
+            Console.WriteLine("Lost focus of the expander.");
         }
     }
 }

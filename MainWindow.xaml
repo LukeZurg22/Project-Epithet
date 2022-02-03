@@ -73,7 +73,7 @@
                     Grid.Row="2"
                     Grid.Column="1"
                     Grid.ColumnSpan="2"
-                    Click="TestMethod"
+                    Click="Test_Add_Campaign"
                     />
 
                 <Button
@@ -83,7 +83,7 @@
                     Grid.Row="3"
                     Grid.Column="1"
                     Grid.ColumnSpan="2"
-                    Click="Test_Add_Initial_Sheets"
+                    Click="Test_Add_Sheet"
                     />
 
                 <Grid.ColumnDefinitions>

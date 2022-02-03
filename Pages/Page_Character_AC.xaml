@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:Epithet_Erased_System"
+             xmlns:controls="clr-namespace:Epithet_Erased_System.Controls"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="650"
              xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
@@ -11,59 +12,32 @@
     <ScrollViewer>
         <Grid
         Background="{Binding Path=(local:GlobalProperties.GlobalBackground)}"
-        
+        MouseDown="Grid_GotKeyboardFocus"
         >
 
             <Grid
                 Name="Decor_Row_Grid"
                 Grid.Row="0"
                 Grid.ColumnSpan="3"
-                Background="{Binding PageBackground,
-                RelativeSource={RelativeSource AncestorType={x:Type local:CharacterSheet}}}"
-            >
+                Background="{Binding ElementName=Settings_Control, Path=PageBackground}"
+                >
 
                 <Image
                     Source="/Assets/Icons/book_decoration.png"
                     Width="70"
                 />
 
+            </Grid>
 
-                <Expander
-                    Margin="0,0,0,0"
+            <controls:Control_Charactersheet_Settings
+                    x:Name="Settings_Control"
                     Grid.Row="0"
-                    Grid.Column="0"
+                    Grid.RowSpan="3"
                     HorizontalAlignment="Left"
                     VerticalAlignment="Top"
-                    Height="100"
-                    Width="250"
-                    IsExpanded="False"
-                    >
-                    
-                    <Grid Background="White">
-                        <Label Content="Ribbon Background" Grid.Row="0"/>
-                        <xctk:ColorPicker
-                            Width="125"
-                            Height="25"
-                            DisplayColorAndName="True"
-                            ColorMode="ColorCanvas"
-                            SelectedColor="#00000000"
-                            ShowAvailableColors="False"
-                            SelectedColorChanged="ColorPicker_SelectedColorChanged"
-                            Name="ColorPicker"
-                            Grid.Row="0"
-                            HorizontalAlignment="Right"
-                        />
-                        <Grid.RowDefinitions>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                            <RowDefinition/>
-                        </Grid.RowDefinitions>
-                    </Grid>
-                </Expander>
+                    Panel.ZIndex="1"
+                    />
 
-
-
-            </Grid>
 
             <Grid Name="Title_Grid"
                 Grid.Row="1"
@@ -91,6 +65,7 @@
                     Foreground="{Binding Path=(local:GlobalProperties.GlobalForeground),UpdateSourceTrigger=PropertyChanged}"
                    />
 
+
                 <Label x:Name="Sheet_Label1"
                    Content="The Anime Campaign System" 
                    HorizontalAlignment="Center"
@@ -100,9 +75,9 @@
                    FontWeight="Normal"
                    FontFamily="Segoe UI Semibold"
                    FontSize="10"
-                   
-                   Foreground="CornflowerBlue"
+                   Foreground="{Binding Path=(local:GlobalProperties.GlobalForeground),UpdateSourceTrigger=PropertyChanged}"
                    />
+
 
                 <Line
                     X1="25" Y1="60"
@@ -246,9 +221,9 @@
             <local:Stat
                     HorizontalAlignment="Left"
                     VerticalAlignment="Center"
-                    Foreground="{Binding Path=(local:GlobalProperties.GlobalStat1Foreground), UpdateSourceTrigger=PropertyChanged}"
-                    Stroke="{Binding Path=(local:GlobalProperties.GlobalStat1Stroke), UpdateSourceTrigger=PropertyChanged}"
-                    Text="STAMINA"
+                    Foreground="{Binding ElementName=Settings_Control, Path=Stat1Foreground}"
+                    Stroke="{Binding ElementName=Settings_Control, Path=Stat1Stroke}"
+                    Text="{Binding ElementName=Settings_Control, Path=Stat1Text}"
                     Grid.Row="2"
                     Grid.Column="2"
                     Height="120"

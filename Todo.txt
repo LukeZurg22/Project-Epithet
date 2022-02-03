@@ -15,16 +15,30 @@
 
 #. Add color-changer for book descoration.
 
+#. Add themes
+
+#. Add compatability with flashing text
+
+#. Add better settings panel. (IsPopup = ???)
+
+#. Add better "For each stat" to auto-bind. (IsPossible = ???)
+
+#. Refine Charactersheet Settings Auto-Close feature
+
 #. Add drag & drop tabs (user convienence)
+
+#. Add function for Clicking away from settings closes the expander(s)
+
+#. Seperate inventory tabs & etc to be their own control
 
 #. Add custom sheet colors that bypass the theme (for those picky ones out there)
 #. Make every aspect of a character sheet customizable to ignore total theme.
 
-#. Decide for customizability of stat-blocks.
-
 #. Add customizability for "unused" epithet part. (WARNING, MAY BE USELESS DUE TO IT BEING HIDDEN UNTIL NEEDED)
 
-#. Add Color-Change in tabs, in settings.
+#. Add Color-Change for tabs, in settings. | SEE COLOR CHANGING FOR UNSELECTED TABS
+
+#. Add automatic settings-menu width-resising when settings font is changed
 
 #. Paste link for image, like dicecloud
 

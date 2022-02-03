@@ -46,6 +46,22 @@ namespace Epithet_Erased_System
             }
         }
 
+        public static event EventHandler GlobalSettingsFontSizeChanged;
+        private static double _settingsFontsize;
+        public static double GlobalSettingsFontSize
+        {
+            get { return _settingsFontsize; }
+            set
+            {
+                if (value != _settingsFontsize)
+                {
+                    _settingsFontsize = value;
+
+                    if (GlobalSettingsFontSizeChanged != null)
+                        GlobalSettingsFontSizeChanged(null, EventArgs.Empty);
+                }
+            }
+        }
 
         public static event EventHandler GlobalFontSizeChanged;
         private static double _fontsize;
@@ -112,6 +128,23 @@ namespace Epithet_Erased_System
 
                     if (GlobalStat1ForegroundChanged != null)
                         GlobalStat1ForegroundChanged(null, EventArgs.Empty);
+                }
+            }
+        }
+
+        public static event EventHandler GlobalStat1TextChanged;
+        private static string _stat1text = "STAMINA";
+        public static string GlobalStat1Text
+        {
+            get { return _stat1text; }
+            set
+            {
+                if (value != _stat1text)
+                {
+                    _stat1text = value;
+
+                    if (GlobalStat1TextChanged != null)
+                        GlobalStat1TextChanged(null, EventArgs.Empty);
                 }
             }
         }
